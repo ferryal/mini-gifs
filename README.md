@@ -1,4 +1,7 @@
 ## Mini Gifs Index Web App
+1.  Show list trending gif
+1.  Search gif
+1.  Infinite Scroll
 
 ## Tech Stack
 
