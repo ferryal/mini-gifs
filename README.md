@@ -22,3 +22,4 @@ npm start / yarn start
 ```
 
 ### Live Demo
+[https://mini-gifs.netlify.app/](https://mini-gifs.netlify.app/
