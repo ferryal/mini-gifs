@@ -62,12 +62,16 @@ const ListPokemon = () => {
 		const offset = 0
 		dispatch(fetchSearch(gif, offset, count))
 	}
+
+	const refreshGiphy = () => {
+		window.location = "/"
+	}
 	
 
 	return (
 		<div id="container" className="container">
 			<div className="search-box">
-				<img className="giphy-logo" src="/assets/images/giphy.svg" alt="giphy-logo" />
+				<img className="giphy-logo" src="/assets/images/giphy.svg" alt="giphy-logo" onClick={refreshGiphy}/>
 				<div>
 					<input type="text" placeholder="search gifs" onChange={(event) => {setGif(event.target.value)}} />
 					<button onClick={handleSearchGif}>Search</button>
