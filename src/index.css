@@ -1,0 +1,45 @@
+.container {
+    margin: 3rem;
+}
+
+.row {
+    display: grid;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+.giphy-logo {
+    width: 100px;
+    cursor: pointer;
+}
+
+img {
+    width: 250px;
+}
+
+.search-box {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.search-box div input {
+    padding: 10px;
+    max-width: 450px;
+    border-radius: 10px;
+    border: 1px solid #cecece;
+    margin-right: 20px;
+}
+
+.search-box div button {
+    width: 80px;
+    height: 30px;
+    background-color: #3daadd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-box div button:hover {
+    background-color: #1dadf0;
+}
+
+.m-5 {margin: 5px;}
