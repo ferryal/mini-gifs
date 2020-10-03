@@ -1,4 +1,4 @@
-## Pokemon Index Web App
+## Mini Gifs Index Web App
 
 ## Tech Stack
 
