@@ -2,7 +2,8 @@ import { GIFS } from '../actions/ActionTypes';
 
 const initialState = {
   loading: false,
-  gifs: {}
+  gifs: {},
+  results: {}
 };
 
 export const reducer = (state = initialState, action) => {
@@ -23,11 +24,17 @@ export const reducer = (state = initialState, action) => {
         ...state,
         loading: false
       };
-    case GIFS.FETCH_IMAGE_SUCCESS:
+    case GIFS.FETCH_SEARCH_SUCCESS:
       return {
         ...state,
-        pokemon: [...state.pokemon, action.payload.data]
-      };
+        loading: false,
+        results: action.payload.data
+      }
+    case GIFS.FETCH_SEARCH_FAILED:
+      return {
+        ...state,
+        loading: false
+      }
     default:
       return state;
   }

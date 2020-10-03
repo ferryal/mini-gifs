@@ -22,6 +22,19 @@ function fetchFailed() {
   };
 }
 
+function fetchSuccessSearch(data) {
+  return {
+    type: GIFS.FETCH_SEARCH_SUCCESS,
+    payload: { data }
+  };
+}
+
+function fetchFailedSearch() {
+  return {
+    type: GIFS.FETCH_SEARCH_FAILED
+  };
+}
+
 export function fetchGifTrending(start, count) {
   return (dispatch) => {
     dispatch(loading());
@@ -33,12 +46,31 @@ export function fetchGifTrending(start, count) {
       if (res.status === 200) {
         const response = res.data;
         dispatch(fetchSuccess(response));
-        console.log(response)
       } else {
         dispatch(fetchFailed());
       }
     }).catch(() => {
       dispatch(fetchFailed());
+    });
+  };
+}
+
+export function fetchSearch(payload, start, count) {
+  return (dispatch) => {
+    dispatch(loading());
+    axios.get(`${config.apiUrl}/search?api_key=${config.apiKey}&q=${payload}&offset=${start}&limit=${count}`, {
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    }).then((res) => {
+      if (res.status === 200) {
+        const response = res.data;
+        dispatch(fetchSuccessSearch(response));
+      } else {
+        dispatch(fetchFailedSearch());
+      }
+    }).catch(() => {
+      dispatch(fetchFailedSearch());
     });
   };
 }

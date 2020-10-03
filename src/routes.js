@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import ListGif from './schenes/List-Gif';
+import ListGif from './schenes/List-Gif/index.jsx';
 
 class Routes extends Component {
 render() {
